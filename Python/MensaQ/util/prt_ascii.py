@@ -13,7 +13,6 @@ Design: Create a function to print ASCII art.
 import os
 import platform
 
-print(platform.uname().system)
 if platform.uname().system == "Windows":
     os.system('cls')
         

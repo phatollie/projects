@@ -11,15 +11,21 @@ Design: Create a function to print ASCII art.
 """
 
 import os
+import platform
 
+print(platform.uname().system)
+if platform.uname().system == "Windows":
+    os.system('cls')
+        
+else:
+    os.system('clear')
 
 def prt_ascii():
     """
     Prints the ASCII art for the word MENSA.
     """
-    os.system('cls')
     print('')
-    print("\033[1;32;40m \n") # Set text color to green.
+    print("\033[1;33;40m \n") # Set text color to Yellow.
     print('        ___           ___           ___           ___           ___      ')
     print('       /\__\         /\  \         /\__\         /\  \         /\  \     ')
     print('      /::|  |       /::\  \       /::|  |       /::\  \       /::\  \    ')
@@ -32,7 +38,7 @@ def prt_ascii():
     print('       /:/  /       \:\__\         /:/  /       \::/  /        /:/  /    ')
     print('       \/__/         \/__/         \/__/         \/__/         \/__/     ')
     print('')
-    print("\033[0;37;40m \n") # Set text color back to white.
+    print("\033[0;37;40m \n", flush=True) # Set text color back to white.
 
 if __name__ == '__main__':
     prt_ascii()
